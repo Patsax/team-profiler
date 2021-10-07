@@ -1,0 +1,27 @@
+{
+  "name": "team-profiler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "inquirer": "^8.2.0",
+    "jest": "^27.2.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Patsax/team-profiler.git"
+  },
+  "author": "Patrick Sachleben",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Patsax/team-profiler/issues"
+  },
+  "homepage": "https://github.com/Patsax/team-profiler#readme"
+}
