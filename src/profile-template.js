@@ -1,3 +1,5 @@
+// create team
+
 module.exports = templateData => {
     const {} = templateData;
 
@@ -15,16 +17,15 @@ module.exports = templateData => {
     </head>
     <body>
         <header>
-            <h1 style="text-align: center;" class="page-title text-light bg-dark py-2 px-3">
+            <h1 style="text-align: center;" class="text-light bg-danger py-4">
                 My Team
             </h1>
         </header>
         <main class="container my-5">
+            <div class="row row-cols-3 justify-content-center g-3">
 
+            </div>
         </main>
-        <footer class="container text-center py-3">
-            <h3 class="text-dark">&copy; ${new Date().getFullYear()}</h3>
-        </footer>
     </body>
 </html>
     `;
