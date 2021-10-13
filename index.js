@@ -1,8 +1,8 @@
 const inquirer = require('inquirer');
-const generateSite = require('./src/profile-template');
-const { writeFile, copyFile } = require('./utils/generate-site');
+const generatePage = require('./src/profile-template');
+const writeFile = require('./utils/generate-site');
 
-const promptUser = () => {
+const promptManager = () => {
     return inquirer.prompt([
         {
             type: 'input',
@@ -51,7 +51,7 @@ const promptUser = () => {
                 if (managerOffice) {
                     return true;
                 } else {
-                    console.log("Please enter the team manager's office number!"),
+                    console.log("Please enter the team manager's office number!");
                     return false;
                 }
             }
@@ -59,11 +59,11 @@ const promptUser = () => {
     ]);
 };
 
-const promptEmployee = (employeeData) => {
+const promptTeamMember = (employeeData) => {
     console.log(`
-    ==========================================
-    Add a New Employee or Finish Building Team
-    ==========================================
+    =============================================
+    Add a New Team Member or Finish Building Team
+    =============================================
     `);
 
     // if there is no 'employeeData' array property, create one
@@ -76,4 +76,4 @@ const promptEmployee = (employeeData) => {
     ])
 }
 
-promptUser();
+promptManager();

@@ -1,7 +1,8 @@
-// create team
+// create team cards
+const generateManager = 
 
 module.exports = templateData => {
-    const {} = templateData;
+    const {team} = templateData;
 
     return `
     <!DOCTYPE html>
@@ -23,7 +24,7 @@ module.exports = templateData => {
         </header>
         <main class="container my-5">
             <div class="row row-cols-3 justify-content-center g-3">
-
+                
             </div>
         </main>
     </body>
