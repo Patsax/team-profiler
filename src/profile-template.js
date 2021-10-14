@@ -1,5 +1,5 @@
 // create team cards
-const generateManager = 
+
 
 module.exports = templateData => {
     const {team} = templateData;

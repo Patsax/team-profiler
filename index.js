@@ -1,4 +1,7 @@
 const inquirer = require('inquirer');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
+const Manager = require('./lib/Manager');
 const generatePage = require('./src/profile-template');
 const writeFile = require('./utils/generate-site');
 
@@ -72,8 +75,21 @@ const promptTeamMember = (employeeData) => {
     }
     return inquirer
     .prompt([
-        {}
+        {
+            type: 'list',
+            name: 'addFinish',
+            message: 'Would you like to enter an engineer, enter an intern, or finish building your team?',
+            choices: ['Enter Engineer', 'Enter Intern', 'Finish Team'],
+
+        }
     ])
 }
 
-promptManager();
+promptManager()
+    .then(promptTeamMember)
+    .then(employeeData => {
+        return generatePage(employeeData);
+    })
+    .then(pageHTML => {
+        return writeFile(pageHTML);
+    });
