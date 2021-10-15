@@ -1,8 +1,72 @@
-// create team cards
+const Engineer = require("../lib/Engineer");
+const Intern = require('../lib/Intern');
+const Manager = require('../lib/Manager');
 
+// create team cards
+const generateManager = managerInfo => {
+    return `
+        <div class="col">
+            <div class="card">
+                <div class="card-header bg-primary">
+                    <h2 class="card-title text-light">${managerInfo.name}</h2>
+                    <h4 class="card-subtitle text-light">${managerInfo.role}</h4>
+                </div>
+                <div class="card-body bg-light">
+                    <p class="card-text border bg-white my-0 p-2">ID: ${managerInfo.id}</p>
+                    <p class="card-text border bg-white my-0 p-2">Email: <span><a href="#">${managerInfo.email}</a></span></p>
+                    <p class="card-text border bg-white my-0 p-2">Office: ${managerInfo.office}</p>
+                </div>
+            </div>
+        </div>
+    `;
+};
+
+const generateEngineer = engineerInfo => {
+    if (!engineerInfo) {
+        return '';
+    }
+
+    return `
+        <div class="col">
+            <div class="card">
+                <div class="card-header bg-primary">
+                    <h2 class="card-title text-light">${engineerInfo.name}</h2>
+                    <h4 class="card-subtitle text-light">${engineerInfo.role}</h4>
+                </div>
+                <div class="card-body bg-light">
+                    <p class="card-text border bg-white my-0 p-2">ID: ${engineerInfo.id}</p>
+                    <p class="card-text border bg-white my-0 p-2">Email: <span><a href="#">${engineerInfo.email}</a></span></p>
+                    <p class="card-text border bg-white my-0 p-2">GitHub: <span><a href="#">${engineerInfo.github}</a></span></p>
+                </div>
+            </div>
+        </div>
+    `;
+};
+
+const generateIntern = internInfo => {
+    if (!internInfo) {
+        return '';
+    }
+
+    return `
+        <div class="col">
+            <div class="card">
+                <div class="card-header bg-primary">
+                    <h2 class="card-title text-light">${internInfo.name}</h2>
+                    <h4 class="card-subtitle text-light">${internInfo.role}</h4>
+                </div>
+                <div class="card-body bg-light">
+                    <p class="card-text border bg-white my-0 p-2">ID: ${internInfo.id}</p>
+                    <p class="card-text border bg-white my-0 p-2">Email: <span><a href="#">${internInfo.email}</a></span></p>
+                    <p class="card-text border bg-white my-0 p-2">School: ${internInfo.github}</p>
+                </div>
+            </div>
+        </div>
+    `;
+};
 
 module.exports = templateData => {
-    const {team} = templateData;
+    const { managerInfo } = templateData;
 
     return `
     <!DOCTYPE html>
@@ -24,7 +88,9 @@ module.exports = templateData => {
         </header>
         <main class="container my-5">
             <div class="row row-cols-3 justify-content-center g-3">
-                
+                ${generateManager(managerInfo)}
+                ${generateEngineer(engineerInfo)}
+                ${generateIntern(internInfo)}
             </div>
         </main>
     </body>

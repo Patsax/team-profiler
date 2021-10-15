@@ -231,27 +231,4 @@ function addOrFinish () {
     })
 }
 
-// const promptTeamMember = (employeeData) => {
-//     console.log(`
-//     =============================================
-//     Add a New Team Member or Finish Building Team
-//     =============================================
-//     `);
-
-//     // if there is no 'employeeData' array property, create one
-//     if (!employeeData) {
-//         employeeData = [];
-//     }
-//     return inquirer
-//     .prompt([
-//         {
-//             type: 'list',
-//             name: 'addFinish',
-//             message: 'Would you like to enter an engineer, enter an intern, or finish building your team?',
-//             choices: ['Enter Engineer', 'Enter Intern', 'Finish Team'],
-
-//         }
-//     ])
-// }
-
 promptManager();
