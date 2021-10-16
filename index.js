@@ -3,7 +3,8 @@ const inquirer = require('inquirer');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
-const generatePage = require('./src/profile-template');
+const generateTeam = require('./src/profile-template');
+
 
 const team = [];
 
@@ -220,8 +221,8 @@ function addOrFinish () {
     ])
     .then((val) => {
         if (val.complete) {
-            const teamProfile = generatePage(team);
-            fs.writeFile('/dist/index.html', teamProfile, function (err) {
+            const teamProfile = generateTeam(team);
+            fs.writeFile('./dist/index.html', teamProfile, function (err) {
                 if (err) throw err;
                 console.log('File created!');
             })

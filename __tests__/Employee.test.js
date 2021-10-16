@@ -6,4 +6,5 @@ test("creates new employee object", () => {
     expect(typeof employee.name).toBe('string');
     expect(typeof employee.id).toBe('number');
     expect(typeof employee.email).toBe('string');
+    expect(employee.role()).toBe('Employee');
 });
